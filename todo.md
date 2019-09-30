@@ -1,5 +1,5 @@
 # TODO
-- [ ] draw a simple map
+- [x] draw a simple map
 - [ ] draw a symbol for the player
 - [ ] move the player around the map
 - [ ] implement collision detection
