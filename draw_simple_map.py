@@ -4,9 +4,6 @@ import curses
 from drawille import Canvas, line
 from time import sleep
 
-stdscr = curses.initscr()
-stdscr.refresh()
-
 class Point(object):
 
     def __init__(self, x=0, y=0):
@@ -16,8 +13,11 @@ class Point(object):
     def __repr__(self):
         return f"<{self.x}, {self.y}>"
 
+    def __add__(self, other):
+        return Point(self.x+other.x, self.y+other.y)
 
-def main(stdscr):
+
+def draw_simple_map(stdscr):
 
     c = Canvas()
 
@@ -46,5 +46,8 @@ def main(stdscr):
 
 if __name__ == "__main__":
 
-    curses.wrapper(main)
+    stdscr = curses.initscr()
+    stdscr.refresh()
+
+    curses.wrapper(draw_simple_map)
 
